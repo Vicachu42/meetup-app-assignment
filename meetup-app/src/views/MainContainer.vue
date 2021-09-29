@@ -8,7 +8,12 @@
       mi lo-fi snackwave 90's pabst la croix YOLO prism lyft four loko. Migas
       normcore brunch neutra woke etsy, ennui PBR&B.
     </p>
-    <UpcomingEvent />
+    <h3>Upcoming Events</h3>
+    <UpcomingEvent
+      v-for="(meetup, index) in meetups"
+      :key="index"
+      :meetup="meetup"
+    />
   </section>
 </template>
 
@@ -19,6 +24,9 @@ export default {
   name: "MainContainer",
   components: {
     UpcomingEvent,
+  },
+  props: {
+    meetups: Array,
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <section class="wrapper">
     <Header />
     <article class="body-content">
-      <MainContainer />
+      <MainContainer v-bind:meetups="meetups" />
       <SideContainer />
     </article>
     <Footer />
@@ -22,6 +22,9 @@ export default {
     MainContainer,
     SideContainer,
     Footer,
+  },
+  props: {
+    meetups: Array,
   },
 };
 </script>
