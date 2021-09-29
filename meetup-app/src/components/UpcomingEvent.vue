@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h3>Upcoming Event</h3>
+    <h3>Upcoming Events</h3>
     <article class="card-wrapper">
       <p class="meeting-time">FRI, DEC 24, 3:00 PM CEST</p>
       <p class="meeting-title">Meetup #1827</p>
@@ -23,11 +23,4 @@ export default {
 </script>
 
 <style scoped>
-.card-wrapper {
-  background-color: white;
-  width: 100%;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 1em;
-  box-sizing: border-box;
-}
 </style>

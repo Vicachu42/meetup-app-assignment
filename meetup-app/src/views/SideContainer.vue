@@ -1,6 +1,5 @@
 <template>
   <section class="side-wrapper">
-    <h2>Side</h2>
     <RegisteredEvent />
     <PastEvent />
   </section>
@@ -22,6 +21,7 @@ export default {
 <style>
 .side-wrapper {
   width: 33%;
-  border: dotted red;
+  padding: 1em;
+  margin-left: 1.8em;
 }
 </style>

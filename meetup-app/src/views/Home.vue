@@ -35,6 +35,15 @@ export default {
   flex-direction: row;
 }
 
+.card-wrapper {
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
 h1 {
   font-family: "Maven Pro", sans-serif;
   font-size: 2rem;
@@ -47,6 +56,14 @@ h3 {
   font-family: "Maven Pro", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
+  margin-top: 0;
+}
+
+h4 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0;
 }
 
 .meeting-time {

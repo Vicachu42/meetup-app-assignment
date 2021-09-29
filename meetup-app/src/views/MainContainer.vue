@@ -27,6 +27,5 @@ export default {
 .main-wrapper {
   width: 66%;
   padding: 1em;
-  border: dashed black;
 }
 </style>
