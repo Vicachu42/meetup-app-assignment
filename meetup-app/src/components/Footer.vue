@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h2>Footer</h2>
-  </div>
+  <section class="footer-bar">
+    <article class="footer-content">
+      <p>© 2021 Ray Magini Co</p>
+    </article>
+  </section>
 </template>
 
 <script>
@@ -10,5 +12,24 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.footer-bar {
+  background-color: #30363e;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+.footer-content {
+  width: 1000px;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-content p {
+  color: white;
+}
 </style>
