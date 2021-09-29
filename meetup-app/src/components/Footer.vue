@@ -1,7 +1,7 @@
 <template>
   <section class="footer-bar">
     <article class="footer-content">
-      <p>© 2021 Ray Magini Co</p>
+      <p>© 2021 Ray Magini Co.</p>
     </article>
   </section>
 </template>
@@ -17,7 +17,7 @@ export default {
   background-color: #30363e;
   width: 100%;
   height: 50px;
-  text-align: center;
+  margin-top: 1em;
 }
 
 .footer-content {

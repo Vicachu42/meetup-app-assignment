@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <section class="side-wrapper">
     <h2>Side</h2>
     <RegisteredEvent />
     <PastEvent />
-  </div>
+  </section>
 </template>
 
 <script>
@@ -20,4 +20,8 @@ export default {
 </script>
 
 <style>
+.side-wrapper {
+  width: 33%;
+  border: dotted red;
+}
 </style>

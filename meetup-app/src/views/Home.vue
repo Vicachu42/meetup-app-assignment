@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <section class="wrapper">
     <Header />
-    <h1>Home</h1>
-    <MainContainer />
-    <SideContainer />
+    <article class="body-content">
+      <MainContainer />
+      <SideContainer />
+    </article>
     <Footer />
-  </div>
+  </section>
 </template>
 
 <script>
@@ -26,4 +27,46 @@ export default {
 </script>
 
 <style>
+.body-content {
+  width: 1000px;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.meeting-time {
+  color: #838b90;
+  text-transform: uppercase;
+}
+
+.meeting-title {
+  color: #757575;
+}
+
+.meeting-place {
+  color: #757575;
+}
+
+.meeting-attendees {
+  color: #757575;
+}
+
+.map-marker {
+  width: 5%;
+}
 </style>

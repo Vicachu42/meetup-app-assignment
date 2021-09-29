@@ -22,7 +22,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  background-color: #f6f7f8;
   margin-left: -8px;
   margin-right: -8px;
 }

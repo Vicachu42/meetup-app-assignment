@@ -17,6 +17,7 @@ export default {
   },
   computed: {
     member() {
+      console.log("Hi! My name is", this.name);
       return `<b>Hello</b> ${this.name}`;
     },
   },
@@ -29,6 +30,7 @@ export default {
   height: 80px;
   border-bottom: 1px solid lightgrey;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 1em;
 }
 
 .header-content {
