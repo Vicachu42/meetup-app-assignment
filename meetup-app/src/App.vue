@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <Home v-bind:meetups="meetups" />
+    <Home
+      v-bind:meetups="meetups"
+      v-bind:registeredMeetups="registeredMeetups"
+      v-bind:pastMeetups="pastMeetups"
+    />
   </div>
 </template>
 
@@ -23,13 +27,6 @@ export default {
           attendees: 5,
         },
         {
-          id: 2,
-          time: "SUN, APR 20, 2042 11:00 PM PSST",
-          title: "Extraterrestrial Meetup #19",
-          place: "At Gary's place",
-          attendees: 7,
-        },
-        {
           id: 3,
           time: "FRI, SEP 1, 1939, 1:00 AM DST",
           title: "Extraterrestrial Meetup #-712",
@@ -46,9 +43,35 @@ export default {
         {
           id: 5,
           time: "MON, JUNE 10, 1129, 9:00 PM CAST",
-          title: "Extraterrestrial Meetup #-9",
+          title: "Extraterrestrial Meetup #9",
           place: "45°32′50.8″S 16°49′41.4″W",
           attendees: 9,
+        },
+      ],
+      registeredMeetups: [
+        {
+          id: 2,
+          time: "SUN, APR 20, 2042 11:00 PM PSST",
+          title: "Extraterrestrial Meetup #-19",
+          place: "At Gary's place",
+          attendees: 7,
+        },
+      ],
+      pastMeetups: [
+        {
+          id: 6,
+          time: "MON, SEP 21, 2015, 4:00 PM U",
+          title: "Extraterrestrial Meetup #14",
+          place: "Anywhere really",
+          attendees: 9,
+        },
+        {
+          id: 7,
+          time: "THU, AUG 12, 2021, 4:00 AM CEST",
+          title: "Extraterrestrial Meetup #?",
+          place:
+            "Next to the second largest ball of yarn in the world, Oregon, USA",
+          attendees: 18339,
         },
       ],
     };

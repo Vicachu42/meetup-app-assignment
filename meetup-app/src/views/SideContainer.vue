@@ -1,7 +1,16 @@
 <template>
   <section class="side-wrapper">
-    <RegisteredEvent />
-    <PastEvent />
+    <RegisteredEvent
+      v-for="(registeredMeetup, index) in registeredMeetups"
+      :key="index"
+      :registeredMeetup="registeredMeetup"
+    />
+    <h4>Past Events</h4>
+    <PastEvent
+      v-for="(pastMeetup, index) in pastMeetups"
+      :key="index"
+      :pastMeetup="pastMeetup"
+    />
   </section>
 </template>
 
@@ -14,6 +23,10 @@ export default {
   components: {
     RegisteredEvent,
     PastEvent,
+  },
+  props: {
+    registeredMeetups: Array,
+    pastMeetups: Array,
   },
 };
 </script>

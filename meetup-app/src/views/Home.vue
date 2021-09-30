@@ -3,7 +3,10 @@
     <Header />
     <article class="body-content">
       <MainContainer v-bind:meetups="meetups" />
-      <SideContainer />
+      <SideContainer
+        v-bind:registeredMeetups="registeredMeetups"
+        v-bind:pastMeetups="pastMeetups"
+      />
     </article>
     <Footer />
   </section>
@@ -25,6 +28,8 @@ export default {
   },
   props: {
     meetups: Array,
+    registeredMeetups: Array,
+    pastMeetups: Array,
   },
 };
 </script>
@@ -71,15 +76,19 @@ h4 {
 
 .meeting-time {
   color: #838b90;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .meeting-title {
   color: #757575;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .meeting-place {
   color: #757575;
+  font-weight: 500;
 }
 
 .meeting-attendees {
@@ -87,6 +96,6 @@ h4 {
 }
 
 .map-marker {
-  width: 5%;
+  width: 0.7rem;
 }
 </style>

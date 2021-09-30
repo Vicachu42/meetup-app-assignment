@@ -2,8 +2,8 @@
   <section class="wrapper">
     <h3>Your Events</h3>
     <article class="card-wrapper">
-      <p class="meeting-time">FRI, DEC 24, 3:00 PM CEST</p>
-      <p class="meeting-title">Meetup #1827</p>
+      <p class="meeting-time">{{ registeredMeetup.time }}</p>
+      <p class="meeting-title">{{ registeredMeetup.title }}</p>
     </article>
   </section>
 </template>
@@ -11,6 +11,9 @@
 <script>
 export default {
   name: "RegisteredEvent",
+  props: {
+    registeredMeetup: Object,
+  },
 };
 </script>
 
