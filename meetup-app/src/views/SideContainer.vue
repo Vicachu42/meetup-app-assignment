@@ -2,13 +2,13 @@
   <section class="side-wrapper">
     <RegisteredEvent
       v-for="(registeredMeetup, index) in registeredMeetups"
-      :key="index"
+      :key="index + 'registered'"
       :registeredMeetup="registeredMeetup"
     />
     <h4>Past Events</h4>
     <PastEvent
       v-for="(pastMeetup, index) in pastMeetups"
-      :key="index"
+      :key="index + 'past'"
       :pastMeetup="pastMeetup"
     />
   </section>
