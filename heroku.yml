@@ -1,0 +1,3 @@
+build:
+  docker:
+    web: ./meetup-app/Dockerfile
