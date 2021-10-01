@@ -4,6 +4,8 @@ import UpcomingEvent from '@/components/UpcomingEvent.vue';
 // The test works for now, but there are some issues. If I mount the component in beforeEach, the test will bug out and it won't understand what "time" or "title" etc from the component is. 
 // I would prefer to be able to mount the component before each test and to declare the data as a global variable. But I'll keep it around for when it's time to clean up the project.
 
+// The last test is still in development, since I haven't decided on the functionality yet
+
 describe('UpcomingEvent.vue', () => {
   let wrapper, data;
   beforeEach(() => {
@@ -46,18 +48,16 @@ describe('UpcomingEvent.vue', () => {
         }); console.log(wrapper); */
   });
 
-  it('should render the time of a meetup with data from app.vue upon loading', () => { });
-
-  it('should render title of a meetup with data from App.vue upon loading', () => {
-    const expected = data[0].title;
+  it('should render the time of a meetup with data from app.vue upon loading', () => {
+    const expected = data[0].time;
     const wrapper = mount(UpcomingEvent, {
       propsData: {
         meetup: data[0]
       }
     });
 
-    const meetupInfo = wrapper.find('.meeting-title');
-    const text = meetupInfo.text();
+    const meetupTime = wrapper.find('.meeting-time');
+    const text = meetupTime.text();
 
     console.log(expected);
     console.log(text);
@@ -65,15 +65,35 @@ describe('UpcomingEvent.vue', () => {
     expect(text).toBe(expected);
   });
 
-  it('should render the time of a meetup with data from app.vue upon loading', () => { });
+  it('should render the title of a meetup with data from App.vue upon loading', () => {
+    const expected = data[1].title;
+    const wrapper = mount(UpcomingEvent, {
+      propsData: {
+        meetup: data[1]
+      }
+    });
 
-  it('should render the time of a meetup with data from app.vue upon loading', () => { });
+    const meetupTitle = wrapper.find('.meeting-title');
+    const text = meetupTitle.text();
 
-  // should these two be in app?
-  /*   it('should push event object from meetups to registeredMeetups upon clicking button', async () => { }); */
+    expect(text).toBe(expected);
+  });
 
-  // Lower priority
-  /*   it('should push user name into array of participants', async () => { }); */
+  it('should render the place of a meetup with data from app.vue upon loading', () => {
+    const expected = data[2].place;
+    const wrapper = mount(UpcomingEvent, {
+      propsData: {
+        meetup: data[2]
+      }
+    });
+
+    const meetupPlace = wrapper.find('.meeting-place');
+    const text = meetupPlace.text();
+
+    expect(text).toBe(expected);
+  });
+
+  /*   it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
 });
 
 /* const meetups = [
