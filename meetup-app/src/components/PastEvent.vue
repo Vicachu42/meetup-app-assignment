@@ -1,7 +1,7 @@
 <template>
   <section>
     <article class="card-wrapper">
-      <p class="meeting-time">{{ pastMeetup.time }}</p>
+      <!--       <p class="meeting-time">{{ pastMeetup.time }}</p>
       <p class="meeting-title">{{ pastMeetup.title }}</p>
       <p class="meeting-place">
         <img
@@ -10,7 +10,7 @@
           class="map-marker"
         />
         {{ pastMeetup.place }}
-      </p>
+      </p> -->
       <p>Review this meeting</p>
     </article>
   </section>
