@@ -6,6 +6,8 @@ import UpcomingEvent from '@/components/UpcomingEvent.vue';
 
 // The last test is still in development, since I haven't decided on the functionality yet.
 
+//Test emit
+
 describe('UpcomingEvent.vue', () => {
   let wrapper, data;
   beforeEach(() => {

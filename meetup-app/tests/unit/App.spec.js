@@ -7,9 +7,13 @@ describe('App.vue', () => {
     wrapper = shallowMount(App)
   });
 
-  it('should at least have one passing test', () => { });
+  it('should push event object from meetups to registeredMeetups upon clicking button', async () => {
 
-  /*   it('should push event object from meetups to registeredMeetups upon clicking button', async () => { }); */
+  });
+
+  it('should not be able to register to an event more than once', async () => {
+
+  })
 
   // Lower priority
   /*   it('should push user name into array of participants', async () => { }); */
