@@ -13,13 +13,13 @@
       v-for="(meetup, index) in meetups"
       :key="index"
       :meetup="meetup"
+      v-on="$listeners"
     />
   </section>
 </template>
 
 <script>
 import UpcomingEvent from "../components/UpcomingEvent.vue";
-
 export default {
   name: "MainContainer",
   components: {

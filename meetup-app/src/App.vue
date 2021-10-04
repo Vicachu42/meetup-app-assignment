@@ -4,13 +4,13 @@
       v-bind:meetups="meetups"
       v-bind:registeredMeetups="registeredMeetups"
       v-bind:pastMeetups="pastMeetups"
+      v-on:attendMeetup="registerToMeetup"
     />
   </div>
 </template>
 
 <script>
 import Home from "./views/Home.vue";
-
 export default {
   name: "App",
   components: {
@@ -76,12 +76,17 @@ export default {
       ],
     };
   },
+  methods: {
+    registerToMeetup(id) {
+      const attendNewMeetup = this.meetups.find((meetup) => meetup.id === id);
+      this.registeredMeetups.push(attendNewMeetup);
+    },
+  },
 };
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Maven+Pro:wght@400;600;700&display=swap");
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

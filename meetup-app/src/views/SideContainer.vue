@@ -1,5 +1,6 @@
 <template>
   <section class="side-wrapper">
+    <h3>Your Events</h3>
     <RegisteredEvent
       v-for="(registeredMeetup, index) in registeredMeetups"
       :key="index + 'registered'"

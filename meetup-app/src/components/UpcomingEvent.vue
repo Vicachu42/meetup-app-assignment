@@ -11,6 +11,7 @@
       {{ meetup.place }}
     </p>
     <!--     <p class="meeting-attendees">{{ meetup.attendees }}</p> -->
+    <button @click="$emit('attendMeetup', meetup.id)">Attend Event</button>
   </section>
 </template>
 
@@ -19,6 +20,11 @@ export default {
   name: "UpcomingEvent",
   props: {
     meetup: Object,
+  },
+  methods: {
+    emitAttendMeetup() {
+      this.$emit("attendMeetup");
+    },
   },
 };
 </script>

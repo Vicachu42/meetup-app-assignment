@@ -2,7 +2,7 @@
   <section class="wrapper">
     <Header />
     <article class="body-content">
-      <MainContainer v-bind:meetups="meetups" />
+      <MainContainer v-bind:meetups="meetups" v-on="$listeners" />
       <SideContainer
         v-bind:registeredMeetups="registeredMeetups"
         v-bind:pastMeetups="pastMeetups"
@@ -71,7 +71,7 @@ h4 {
   font-family: "Maven Pro", sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
-  margin-top: 0;
+  margin-top: 1.5em;
 }
 
 button {
