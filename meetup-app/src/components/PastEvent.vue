@@ -11,7 +11,22 @@
         />
         {{ pastMeetup.place }}
       </p> -->
-      <p>Review this meeting</p>
+      <div class="review-form" v-show="isVisible">
+        <form>
+          <textarea
+            name="leave-review"
+            class="review-text"
+            cols="30"
+            rows="5"
+            placeholder="Review this event"
+            v-model="newReview"
+          ></textarea>
+        </form>
+        <button class="add-review" @click="addReview">Submit</button>
+      </div>
+      <div class="review" v-show="!isVisible">
+        <p class="added-review">{{ newReview }}</p>
+      </div>
     </article>
   </section>
 </template>
@@ -21,6 +36,18 @@ export default {
   name: "PastEvent",
   props: {
     pastMeetup: Object,
+  },
+  data() {
+    return {
+      isVisible: true,
+      newReview: "",
+    };
+  },
+  methods: {
+    addReview() {
+      this.newReview.push;
+      this.isVisible = !this.isVisible;
+    },
   },
 };
 </script>

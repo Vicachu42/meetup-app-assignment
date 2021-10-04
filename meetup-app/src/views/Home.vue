@@ -74,6 +74,23 @@ h4 {
   margin-top: 0;
 }
 
+button {
+  background-color: #e5635e;
+  color: white;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 0.7em 0.5em 0.7em;
+}
+button:hover {
+  background-color: #e7716d;
+}
+button:active {
+  transform: translateY(3px);
+  background-color: #e7716d;
+}
+
 .meeting-time {
   color: #838b90;
   font-weight: 700;
