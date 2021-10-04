@@ -45,8 +45,13 @@ export default {
   },
   methods: {
     addReview() {
-      this.newReview.push;
-      this.isVisible = !this.isVisible;
+      if (this.newReview === "") {
+        console.log("You can not submit an empty input");
+        return "You can not submit an empty input";
+      } else {
+        this.newReview.push;
+        this.isVisible = !this.isVisible;
+      }
     },
   },
 };

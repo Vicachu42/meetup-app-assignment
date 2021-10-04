@@ -27,13 +27,28 @@ describe('App.vue', () => {
     expect(reviewLength).toBe(expected);
   });
 
+  // What am I testing?
+  // I'm testing a scenario where a click of the button will result in an error message if the string is empty
+  // I have the expected result
+  // I have isolated a trigger event
+  // But how do isolate the expected result in the right element?
+
+  /*   it('should return an error if a review that is an empty string', async () => {
+      const expected = "You can not submit an empty input";
+  
+      const buttonElem = wrapper.find('.add-review');
+      await buttonElem.trigger('click');
+  
+      expect().toBe(expected);
+    }) */
+
   it('should render the input field invisible after adding review', async () => {
-    const expected = true;
+    await wrapper.setData({ isVisible: false });
 
     const buttonElem = wrapper.find('.add-review');
     await buttonElem.trigger('click');
 
-    expect(wrapper.find('.review').isVisible()).toBe(expected);
+    expect(wrapper.find('.review').isVisible()).toBe(true);
   });
 
   // Might add this functionality
