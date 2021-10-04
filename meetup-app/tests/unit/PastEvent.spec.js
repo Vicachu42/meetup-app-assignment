@@ -34,7 +34,7 @@ describe('App.vue', () => {
   // But how do isolate the expected result in the right element?
 
   /*   it('should return an error if a review that is an empty string', async () => {
-      const expected = "You can not submit an empty input";
+      const expected = "You can not submit an empty review";
   
       const buttonElem = wrapper.find('.add-review');
       await buttonElem.trigger('click');

@@ -11,7 +11,9 @@
       {{ meetup.place }}
     </p>
     <!--     <p class="meeting-attendees">{{ meetup.attendees }}</p> -->
-    <button @click="$emit('attendMeetup', meetup.id)">Attend Event</button>
+    <button class="attend-meetup" @click="$emit('attendMeetup', meetup.id)">
+      Attend Event
+    </button>
   </section>
 </template>
 

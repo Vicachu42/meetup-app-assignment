@@ -17,7 +17,7 @@
             name="leave-review"
             class="review-text"
             cols="30"
-            rows="5"
+            rows="4"
             placeholder="Review this event"
             v-model="newReview"
           ></textarea>
@@ -46,8 +46,8 @@ export default {
   methods: {
     addReview() {
       if (this.newReview === "") {
-        console.log("You can not submit an empty input");
-        return "You can not submit an empty input";
+        console.log("You can not submit an empty review");
+        return "You can not submit an empty review";
       } else {
         this.newReview.push;
         this.isVisible = !this.isVisible;

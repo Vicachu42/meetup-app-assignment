@@ -6,8 +6,6 @@ import UpcomingEvent from '@/components/UpcomingEvent.vue';
 
 // The last test is still in development, since I haven't decided on the functionality yet.
 
-//Test emit
-
 describe('UpcomingEvent.vue', () => {
   let wrapper, data;
   beforeEach(() => {
@@ -96,6 +94,14 @@ describe('UpcomingEvent.vue', () => {
   });
 
   /*   it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
+
+  it('should register user to meetup when clicking attend-meetup button', async () => {
+    /*     const wrapper = shallowMount(UpcomingEvent);
+        await wrapper.find('.attend-meetup').trigger('click');
+    
+        wrapper.vm.emitAttendMeetup();
+        console.log(wrapper.emitted()); */
+  })
 });
 
 /* const meetups = [
