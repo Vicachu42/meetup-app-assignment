@@ -9,6 +9,15 @@ describe('App.vue', () => {
   });
 
   it('should push event object from meetups to registeredMeetups upon clicking button', async () => {
+    // This is testing the method, but is it testing that the right content is pushed to the right place?
+    const attendMeetup = jest.spyOn(App.methods, 'registerToMeetup');
+    const wrapper = mount(App);
+
+    const buttonElem = wrapper.find('.attend-meetup');
+    await buttonElem.trigger('click');
+
+    expect(attendMeetup).toBeCalled();
+
     /*     const wrapper = mount(App, {
           data() {
             return {
@@ -39,9 +48,9 @@ describe('App.vue', () => {
         const buttomElem = wrapper.find('.attend-meetup');
         await buttomElem.trigger('click');
      */
-
   });
 
+  //Lower priority
   /*   it('should not be able to register to an event more than once', async () => {
   
     }) */

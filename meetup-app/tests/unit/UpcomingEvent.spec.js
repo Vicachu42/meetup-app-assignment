@@ -95,6 +95,7 @@ describe('UpcomingEvent.vue', () => {
 
   /*   it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
 
+  //This won't work until I figue out the mounting problem
   it('should register user to meetup when clicking attend-meetup button', async () => {
     /*     const wrapper = shallowMount(UpcomingEvent);
         await wrapper.find('.attend-meetup').trigger('click');
