@@ -1,18 +1,65 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import PastEvent from '@/components/PastEvent.vue';
 
-// Not much use to start up with this until I get the problems with the other two fixed
+// The two last tests are still in development, since I haven't decided on the functionality yet.
 
-describe('App.vue', () => {
-  let wrapper;
+describe('PastEvent.vue', () => {
+  let wrapper, data;
   beforeEach(() => {
-    wrapper = shallowMount(PastEvent)
+    data = pastMeetups
+    wrapper = shallowMount(PastEvent, {
+      propsData: {
+        pastMeetup: data
+      }
+    });
   });
 
-  /*   it('should render the time of a meetup with data from App.vue upon loading', () => { });
-    it('should render the title of a meetup with data from App.vue upon loading', () => { });
-    it('should render the place of a meetup with data from app.vue upon loading', () => { });
-    it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
+  it('should render the time of a meetup with data from App.vue upon loading', () => {
+    const expected = data.time;
+    const wrapper = mount(PastEvent, {
+      propsData: {
+        pastMeetup: data
+      }
+    });
+
+    const meetupTime = wrapper.find('.meeting-time');
+    const text = meetupTime.text();
+
+    /*     console.log(expected);
+        console.log(text); */
+
+    expect(text).toBe(expected);
+  });
+
+  it('should render the title of a meetup with data from App.vue upon loading', () => {
+    const expected = data.title;
+    const wrapper = mount(PastEvent, {
+      propsData: {
+        pastMeetup: data
+      }
+    });
+
+    const meetupTitle = wrapper.find('.meeting-title');
+    const text = meetupTitle.text();
+
+    expect(text).toBe(expected);
+  });
+
+  it('should render the place of a meetup with data from app.vue upon loading', () => {
+    const expected = data.place;
+    const wrapper = mount(PastEvent, {
+      propsData: {
+        pastMeetup: data
+      }
+    });
+
+    const meetupPlace = wrapper.find('.meeting-place');
+    const text = meetupPlace.text();
+
+    expect(text).toBe(expected);
+  });
+
+  /*   it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
 
   it('should render a review text from input field', async () => {
     const expected = 1;
@@ -27,26 +74,13 @@ describe('App.vue', () => {
     expect(reviewLength).toBe(expected);
   });
 
-  // What am I testing?
-  // I'm testing a scenario where a click of the button will result in an error message if the string is empty
-  // I have the expected result
-  // I have isolated a trigger event
-  // But how do isolate the expected result in the right element?
   it('should return an error if a review that is an empty string', async () => {
-    /*       const expected = "You can not submit an empty review";
-      
-          const buttonElem = wrapper.find('.add-review');
-          await buttonElem.trigger('click');
-      
-          expect().toBe(expected); */
+    await wrapper.setData({ error: false });
 
-    // This won't work, since the method is triggered by a click.
-    /*     expect.assertions(1);
-        try {
-          await addReview();
-        } catch (e) {
-          expect(e).toMatch("You can not submit an empty review");
-        } */
+    const buttonElem = wrapper.find('.add-review');
+    await buttonElem.trigger('click');
+
+    expect(wrapper.find('.review-error').isVisible()).toBe(true);
   });
 
   it('should render the input field invisible after adding review', async () => {
@@ -61,3 +95,22 @@ describe('App.vue', () => {
   // Might add this functionality
   // it('should let the user rate the meetup', async () => { });
 });
+
+const pastMeetups =
+{
+  id: 6,
+  time: "MON, SEP 21, 2015, 4:00 PM U",
+  title: "Extraterrestrial Meetup #14",
+  place: "Anywhere really",
+  attendees: [
+    "Zoidberg",
+    "Kodos",
+    "Drax the Destroyer",
+    "Zaphod Beeblebrox",
+    "The Master",
+    "Gordon Shumway",
+    "Indrid Cold",
+  ],
+}
+
+/* console.log(pastMeetups); */

@@ -1,7 +1,7 @@
 <template>
   <section>
     <article class="card-wrapper">
-      <!--       <p class="meeting-time">{{ pastMeetup.time }}</p>
+      <p class="meeting-time">{{ pastMeetup.time }}</p>
       <p class="meeting-title">{{ pastMeetup.title }}</p>
       <p class="meeting-place">
         <img
@@ -10,7 +10,7 @@
           class="map-marker"
         />
         {{ pastMeetup.place }}
-      </p> -->
+      </p>
       <div class="review-form" v-show="isVisible">
         <form>
           <textarea
@@ -22,6 +22,9 @@
             v-model="newReview"
           ></textarea>
         </form>
+        <p class="review-error" v-if="error">
+          You can not submit an empty review
+        </p>
         <button class="add-review" @click="addReview">Submit</button>
       </div>
       <div class="review" v-show="!isVisible">
@@ -41,13 +44,14 @@ export default {
     return {
       isVisible: true,
       newReview: "",
+      error: false,
     };
   },
   methods: {
     addReview() {
       if (this.newReview === "") {
         console.log("You can not submit an empty review");
-        return "You can not submit an empty review";
+        this.error = !this.error;
       } else {
         this.newReview.push;
         this.isVisible = !this.isVisible;

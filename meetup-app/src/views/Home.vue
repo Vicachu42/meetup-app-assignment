@@ -115,4 +115,15 @@ button:active {
 .map-marker {
   width: 0.7rem;
 }
+
+.added-review {
+  color: #757575;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.review-error {
+  color: #e5635e;
+  font-weight: 600;
+}
 </style>

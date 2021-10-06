@@ -14,6 +14,9 @@
     <!--     <ul v-for="attendee in meetups.attendees" :key="attendee">
       <li class="meeting-attendees">{{ meetup.attendees }}</li>
     </ul> -->
+    <!--     <ul v-for="attendee in meetup.attendees" :key="attendee">
+      <li class="meeting-attendees">{{ meetup.attendees.attendee }}</li>
+    </ul> -->
     <button class="attend-meetup" @click="$emit('attendMeetup', meetup.id)">
       Attend Event
     </button>
@@ -25,7 +28,6 @@ export default {
   name: "UpcomingEvent",
   props: {
     meetup: Object,
-    attendee: String,
   },
   methods: {
     emitAttendMeetup() {
