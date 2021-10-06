@@ -9,67 +9,36 @@ import UpcomingEvent from '@/components/UpcomingEvent.vue';
 describe('UpcomingEvent.vue', () => {
   let wrapper, data;
   beforeEach(() => {
-    data = [
-      {
-        id: 1,
-        time: "FRI, DEC 24, 2021, 3:00 PM CEST",
-        title: "Extraterrestrial Meetup #2",
-        place: "66°13′12.6″N 172°19′36.9″E",
-        attendees: 5,
-      },
-      {
-        id: 3,
-        time: "FRI, SEP 1, 1939, 1:00 AM DST",
-        title: "Extraterrestrial Meetup #-712",
-        place: "25°20′42″S 131°02′10″E",
-        attendees: 13,
-      },
-      {
-        id: 4,
-        time: "WED, NOV 23, 2022, 3:00 AM U",
-        title: "Extraterrestrial Meetup #65",
-        place: "Slottsskogen, Göteborg",
-        attendees: 2,
-      },
-      {
-        id: 5,
-        time: "MON, JUNE 10, 1129, 9:00 PM CAST",
-        title: "Extraterrestrial Meetup #9",
-        place: "45°32′50.8″S 16°49′41.4″W",
-        attendees: 9,
-      },
-    ]
-    /*     wrapper = shallowMount(UpcomingEvent, {
-          data: () => {
-            return {
-              meetups: data
-            }
-          }
-        }); console.log(wrapper); */
+    data = meetups
+    wrapper = shallowMount(UpcomingEvent, {
+      propsData: {
+        meetup: data
+      }
+    });
   });
 
   it('should render the time of a meetup with data from app.vue upon loading', () => {
-    const expected = data[0].time;
+    const expected = data.time;
     const wrapper = mount(UpcomingEvent, {
       propsData: {
-        meetup: data[0]
+        meetup: data
       }
     });
 
     const meetupTime = wrapper.find('.meeting-time');
     const text = meetupTime.text();
 
-    console.log(expected);
-    console.log(text);
+    /*     console.log(expected);
+        console.log(text); */
 
     expect(text).toBe(expected);
   });
 
   it('should render the title of a meetup with data from App.vue upon loading', () => {
-    const expected = data[1].title;
+    const expected = data.title;
     const wrapper = mount(UpcomingEvent, {
       propsData: {
-        meetup: data[1]
+        meetup: data
       }
     });
 
@@ -80,10 +49,10 @@ describe('UpcomingEvent.vue', () => {
   });
 
   it('should render the place of a meetup with data from app.vue upon loading', () => {
-    const expected = data[2].place;
+    const expected = data.place;
     const wrapper = mount(UpcomingEvent, {
       propsData: {
-        meetup: data[2]
+        meetup: data
       }
     });
 
@@ -95,43 +64,26 @@ describe('UpcomingEvent.vue', () => {
 
   /*   it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
 
-  //This won't work until I figue out the mounting problem
   it('should register user to meetup when clicking attend-meetup button', async () => {
-    /*     const wrapper = shallowMount(UpcomingEvent);
-        await wrapper.find('.attend-meetup').trigger('click');
-    
-        wrapper.vm.emitAttendMeetup();
-        console.log(wrapper.emitted()); */
+    await wrapper.find('.attend-meetup').trigger('click');
+
+    wrapper.vm.emitAttendMeetup();
+    console.log(wrapper.emitted());
   })
 });
 
-/* const meetups = [
-  {
-    id: 1,
-    time: "FRI, DEC 24, 2021, 3:00 PM CEST",
-    title: "Extraterrestrial Meetup #2",
-    place: "66°13′12.6″N 172°19′36.9″E",
-    attendees: 5,
-  },
-  {
-    id: 3,
-    time: "FRI, SEP 1, 1939, 1:00 AM DST",
-    title: "Extraterrestrial Meetup #-712",
-    place: "25°20′42″S 131°02′10″E",
-    attendees: 13,
-  },
-  {
-    id: 4,
-    time: "WED, NOV 23, 2022, 3:00 AM U",
-    title: "Extraterrestrial Meetup #65",
-    place: "Slottsskogen, Göteborg",
-    attendees: 2,
-  },
-  {
-    id: 5,
-    time: "MON, JUNE 10, 1129, 9:00 PM CAST",
-    title: "Extraterrestrial Meetup #9",
-    place: "45°32′50.8″S 16°49′41.4″W",
-    attendees: 9,
-  },
-] */
+const meetups =
+{
+  id: 1,
+  time: "FRI, DEC 24, 2021, 3:00 PM CEST",
+  title: "Extraterrestrial Meetup #2",
+  place: "66°13′12.6″N 172°19′36.9″E",
+  attendees: [
+    "Zoidberg",
+    "Boros",
+    "Kang",
+    "Kodos",
+    "Predator",
+    "Christopher Johnson",
+  ],
+}
