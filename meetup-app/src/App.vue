@@ -18,6 +18,7 @@ export default {
   },
   data() {
     return {
+      userName: "Drax the Destroyer",
       meetups: [
         {
           id: 1,
@@ -115,6 +116,12 @@ export default {
     registerToMeetup(id) {
       const attendNewMeetup = this.meetups.find((meetup) => meetup.id === id);
       this.registeredMeetups.push(attendNewMeetup);
+
+      /* this.registeredMeetups.push(this.attendees); */
+
+      /*       const userName = "Drax the Destroyer";
+      this.registeredMeetups.attendees.push(userName); */
+
       const index = this.meetups.findIndex((meetup) => meetup.id === id);
       /*       console.log(index); */
       this.meetups.splice(index, 1);

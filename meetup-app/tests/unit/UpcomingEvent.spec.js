@@ -1,8 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import UpcomingEvent from '@/components/UpcomingEvent.vue';
 
-// The last test is still in development, since I haven't decided on the functionality yet.
-
 describe('UpcomingEvent.vue', () => {
   let wrapper, data;
   beforeEach(() => {
@@ -59,7 +57,30 @@ describe('UpcomingEvent.vue', () => {
     expect(text).toBe(expected);
   });
 
-  /*   it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
+  it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => {
+    const expected = 6;
+
+    const amountAttendees = wrapper.findAll('ul > li').length;
+    /* console.log(amountAttendees); */
+
+    expect(amountAttendees).toBe(expected);
+
+  });
+
+  it('should render the guest list invisible upon loading', () => {
+    wrapper.setData({ isVisible: false });
+
+    expect(wrapper.find('.meeting-attendees').isVisible()).toBe(false);
+  })
+
+  it('should render the guest list visible on click', async () => {
+    await wrapper.setData({ isVisible: false });
+
+    const buttonElem = wrapper.find('.view-attendees');
+    await buttonElem.trigger('click');
+
+    expect(wrapper.find('.meeting-attendees').isVisible()).toBe(true);
+  })
 
   it('should register user to meetup when clicking attend-meetup button', async () => {
     await wrapper.find('.attend-meetup').trigger('click');

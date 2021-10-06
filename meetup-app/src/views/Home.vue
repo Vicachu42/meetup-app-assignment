@@ -91,6 +91,34 @@ button:active {
   background-color: #e7716d;
 }
 
+.chevron-bottom {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0;
+  transform: rotate(135deg);
+  vertical-align: auto;
+  width: 0.45em;
+}
+
+.chevron-top {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: auto;
+  width: 0.45em;
+}
+
 .meeting-time {
   color: #838b90;
   font-weight: 700;
@@ -114,6 +142,11 @@ button:active {
 
 .map-marker {
   width: 0.7rem;
+}
+
+.view-attendees {
+  color: #757575;
+  font-weight: 600;
 }
 
 .added-review {

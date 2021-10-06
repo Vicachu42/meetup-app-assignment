@@ -12,13 +12,13 @@ export default {
   name: "Header",
   data() {
     return {
-      name: "Drax the Destroyer",
+      userName: "Drax the Destroyer",
     };
   },
   computed: {
     member() {
-      console.log("Hi! My name is", this.name);
-      return `<b>Hello</b> ${this.name}`;
+      console.log("Hi! My name is", this.userName);
+      return `<b>Hello</b> ${this.userName}`;
     },
   },
 };

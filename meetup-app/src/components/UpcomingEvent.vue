@@ -10,13 +10,18 @@
       />
       {{ meetup.place }}
     </p>
-    <!-- <p class="meeting-attendees">{{ meetup.attendees }}</p> -->
-    <!--     <ul v-for="attendee in meetups.attendees" :key="attendee">
-      <li class="meeting-attendees">{{ meetup.attendees }}</li>
-    </ul> -->
-    <!--     <ul v-for="attendee in meetup.attendees" :key="attendee">
-      <li class="meeting-attendees">{{ meetup.attendees.attendee }}</li>
-    </ul> -->
+    <article>
+      <p class="view-attendees" @click="toggleVisibility()">
+        View Attendees
+        <span class="chevron-bottom" v-show="!isVisible"></span>
+        <span class="chevron-top" v-show="isVisible"></span>
+      </p>
+      <article v-show="isVisible">
+        <ul v-for="attendee in meetup.attendees" :key="attendee">
+          <li class="meeting-attendees">{{ attendee }}</li>
+        </ul>
+      </article>
+    </article>
     <button class="attend-meetup" @click="$emit('attendMeetup', meetup.id)">
       Attend Event
     </button>
@@ -26,12 +31,20 @@
 <script>
 export default {
   name: "UpcomingEvent",
+  data() {
+    return {
+      isVisible: false,
+    };
+  },
   props: {
     meetup: Object,
   },
   methods: {
     emitAttendMeetup() {
       this.$emit("attendMeetup");
+    },
+    toggleVisibility() {
+      this.isVisible = !this.isVisible;
     },
   },
 };
