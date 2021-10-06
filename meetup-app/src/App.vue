@@ -116,7 +116,7 @@ export default {
       const attendNewMeetup = this.meetups.find((meetup) => meetup.id === id);
       this.registeredMeetups.push(attendNewMeetup);
       const index = this.meetups.findIndex((meetup) => meetup.id === id);
-      console.log(index);
+      /*       console.log(index); */
       this.meetups.splice(index, 1);
     },
   },
