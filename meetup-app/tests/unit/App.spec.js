@@ -50,13 +50,12 @@ describe('App.vue', () => {
      */
   });
 
-  //Lower priority
-  /*   it('should not be able to register to an event more than once', async () => {
-  
-    }) */
-
   // Lower priority
   /*   it('should push user name into array of participants', async () => { }); */
+
+  /*   it('should not be able to register to an event more than once', async () => {
+
+    }) */
 });
 
 const meetups = [
