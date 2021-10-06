@@ -34,7 +34,7 @@ export default {
 
 <style>
 .side-wrapper {
-  width: 33%;
+  width: 38%;
   padding: 1em;
   margin-left: 1.8em;
 }

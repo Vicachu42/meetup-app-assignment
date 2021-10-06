@@ -16,7 +16,7 @@
           <textarea
             name="leave-review"
             class="review-text"
-            cols="30"
+            cols="35"
             rows="4"
             placeholder="Review this event"
             v-model="newReview"

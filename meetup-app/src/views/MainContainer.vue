@@ -33,7 +33,7 @@ export default {
 
 <style>
 .main-wrapper {
-  width: 66%;
+  width: 62%;
   padding: 1em;
 }
 </style>

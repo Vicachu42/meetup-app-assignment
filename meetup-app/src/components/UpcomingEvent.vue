@@ -16,11 +16,11 @@
         <span class="chevron-bottom" v-show="!isVisible"></span>
         <span class="chevron-top" v-show="isVisible"></span>
       </p>
-      <article v-show="isVisible">
+      <div v-show="isVisible">
         <ul v-for="attendee in meetup.attendees" :key="attendee">
           <li class="meeting-attendees">{{ attendee }}</li>
         </ul>
-      </article>
+      </div>
     </article>
     <button class="attend-meetup" @click="$emit('attendMeetup', meetup.id)">
       Attend Event

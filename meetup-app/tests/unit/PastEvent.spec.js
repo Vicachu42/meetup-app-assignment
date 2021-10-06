@@ -59,8 +59,6 @@ describe('PastEvent.vue', () => {
     expect(text).toBe(expected);
   });
 
-  /*   it('should render the amount of attendees of a meetup with data from app.vue upon loading', () => { }); */
-
   it('should render a review text from input field', async () => {
     const expected = 1;
 
@@ -93,6 +91,8 @@ describe('PastEvent.vue', () => {
   });
 
   // Might add this functionality
+  // it('should stop the user som leaving a review on meetups they didn't attend'), () => {})
+
   // it('should let the user rate the meetup', async () => { });
 });
 

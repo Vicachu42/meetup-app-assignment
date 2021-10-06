@@ -145,7 +145,7 @@ button:active {
 }
 
 .view-attendees {
-  color: #757575;
+  color: #4ea3b3;
   font-weight: 600;
 }
 
