@@ -117,7 +117,6 @@ export default {
       this.registeredMeetups.push(attendNewMeetup);
 
       const userName = "Drax the Destroyer";
-      /* const registeredMeetup = this.registeredMeetups[1]; */
       const registeredMeetup = this.registeredMeetups.find(
         (registeredMeetup) => registeredMeetup.id === id
       );

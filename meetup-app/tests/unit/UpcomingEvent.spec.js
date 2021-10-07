@@ -23,9 +23,6 @@ describe('UpcomingEvent.vue', () => {
     const meetupTime = wrapper.find('.meeting-time');
     const text = meetupTime.text();
 
-    /*     console.log(expected);
-        console.log(text); */
-
     expect(text).toBe(expected);
   });
 
@@ -61,7 +58,6 @@ describe('UpcomingEvent.vue', () => {
     const expected = 6;
 
     const amountAttendees = wrapper.findAll('ul > li').length;
-    /* console.log(amountAttendees); */
 
     expect(amountAttendees).toBe(expected);
 
@@ -86,7 +82,6 @@ describe('UpcomingEvent.vue', () => {
     await wrapper.find('.attend-meetup').trigger('click');
 
     wrapper.vm.emitAttendMeetup();
-    /*     console.log(wrapper.emitted()); */
   })
 });
 

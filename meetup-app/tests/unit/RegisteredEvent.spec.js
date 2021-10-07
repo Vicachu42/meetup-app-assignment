@@ -2,7 +2,6 @@ import { shallowMount, mount } from '@vue/test-utils';
 import App from '@/App.vue';
 import RegisteredEvent from '@/components/RegisteredEvent.vue';
 
-// Will need some cleanup and possibly edited for more functionality.
 
 describe('RegisteredEvent.vue', () => {
   let wrapper, data;
@@ -12,7 +11,7 @@ describe('RegisteredEvent.vue', () => {
       propsData: {
         registeredMeetup: data
       }
-    }); /* console.log(registeredMeetups); */
+    });
   });
 
   it('should render the title of a meetup with data from App.vue upon loading', () => {
@@ -40,9 +39,6 @@ describe('RegisteredEvent.vue', () => {
     const meetupTime = wrapper.find('.meeting-time');
     const text = meetupTime.text();
 
-    /*     console.log(expected);
-        console.log(text); */
-
     expect(text).toBe(expected);
   });
 
@@ -64,7 +60,6 @@ describe('RegisteredEvent.vue', () => {
     const expected = 5;
 
     const amountAttendees = wrapper.findAll('ul > li').length;
-    /* console.log(amountAttendees); */
 
     expect(amountAttendees).toBe(expected);
 
@@ -84,8 +79,6 @@ describe('RegisteredEvent.vue', () => {
 
     expect(wrapper.find('.meeting-attendees').isVisible()).toBe(true);
   })
-
-  // Import home
 
   it('should recieve data from the meetups array and display in this component', async () => {
     const expected = 2;
@@ -118,5 +111,3 @@ const registeredMeetups =
     "Kif",
   ],
 }
-
-/* console.log(registeredMeetups); */

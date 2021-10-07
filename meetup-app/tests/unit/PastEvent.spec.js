@@ -1,8 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import PastEvent from '@/components/PastEvent.vue';
 
-// The two last tests are still in development, since I haven't decided on the functionality yet.
-
 describe('PastEvent.vue', () => {
   let wrapper, data;
   beforeEach(() => {
@@ -24,9 +22,6 @@ describe('PastEvent.vue', () => {
 
     const meetupTime = wrapper.find('.meeting-time');
     const text = meetupTime.text();
-
-    /*     console.log(expected);
-        console.log(text); */
 
     expect(text).toBe(expected);
   });
@@ -89,11 +84,6 @@ describe('PastEvent.vue', () => {
 
     expect(wrapper.find('.review').isVisible()).toBe(true);
   });
-
-  // Might add this functionality
-  // it('should stop the user som leaving a review on meetups they didn't attend'), () => {})
-
-  // it('should let the user rate the meetup', async () => { });
 });
 
 const pastMeetups =
@@ -112,5 +102,3 @@ const pastMeetups =
     "Indrid Cold",
   ],
 }
-
-/* console.log(pastMeetups); */

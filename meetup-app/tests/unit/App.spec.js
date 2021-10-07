@@ -17,9 +17,6 @@ describe('App.vue', () => {
 
     expect(attendMeetup).toBeCalled();
   });
-
-  // Lower priority
-  /*   it('should push user name into array of participants', async () => { }); */
 });
 
 const meetups = [
