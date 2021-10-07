@@ -18,7 +18,6 @@ export default {
   },
   data() {
     return {
-      userName: "Drax the Destroyer",
       meetups: [
         {
           id: 1,
@@ -117,13 +116,14 @@ export default {
       const attendNewMeetup = this.meetups.find((meetup) => meetup.id === id);
       this.registeredMeetups.push(attendNewMeetup);
 
-      /* this.registeredMeetups.push(this.attendees); */
-
-      /*       const userName = "Drax the Destroyer";
-      this.registeredMeetups.attendees.push(userName); */
+      const userName = "Drax the Destroyer";
+      /* const registeredMeetup = this.registeredMeetups[1]; */
+      const registeredMeetup = this.registeredMeetups.find(
+        (registeredMeetup) => registeredMeetup.id === id
+      );
+      registeredMeetup.attendees.push(userName);
 
       const index = this.meetups.findIndex((meetup) => meetup.id === id);
-      /*       console.log(index); */
       this.meetups.splice(index, 1);
     },
   },
