@@ -1,6 +1,6 @@
 <template>
   <section class="card-wrapper">
-    <p class="meeting-title">{{ registeredMeetup.title }}</p>
+    <p class="registered-meeting-title">{{ registeredMeetup.title }}</p>
     <article>
       <p class="view-attendees" @click="toggleVisibility()">
         View More Information
@@ -48,6 +48,13 @@ export default {
 <style scoped>
 p {
   color: #757575;
+}
+
+.registered-meeting-title {
+  color: #757575;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .view-attendees {
